@@ -9,16 +9,22 @@ namespace PrzyklKol1.Requests
 {
     public class AddAnimalRequest
     {
-        [Required(ErrorMessage ="pole wymagane")]
-        public String Name { get; set; }
+        [Required(ErrorMessage ="Animal wymagane")]
+        public Animal animal { get; set; }
 
-        [Required(ErrorMessage = "pole wymagane")]
-        public String Type { get; set; }
+        public List<String> Procedures { get; set; }
 
-        [Required(ErrorMessage = "pole wymagane")]
-        public String AdmDate { get; set; }
 
-        [Required(ErrorMessage = "pole wymagane")]
-        public String OwnerName { get; set; }
+        //[Required(ErrorMessage ="pole wymagane")]
+        //public String Name { get; set; }
+
+        //[Required(ErrorMessage = "pole wymagane")]
+        //public String Type { get; set; }
+
+        //[Required(ErrorMessage = "pole wymagane")]
+        //public String AdmDate { get; set; }
+
+        //[Required(ErrorMessage = "pole wymagane")]
+        //public String OwnerName { get; set; }
     }
 }

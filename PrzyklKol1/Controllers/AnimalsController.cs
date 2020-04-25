@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PrzyklKol1.Models;
+using PrzyklKol1.Requests;
 using PrzyklKol1.Services;
 
 namespace PrzyklKol1.Controllers
@@ -32,9 +34,13 @@ namespace PrzyklKol1.Controllers
 
 
         [HttpPost]
-        public IActionResult AddAnimal(Animal )
+        public IActionResult AddAnimal(AddAnimalRequest request)
         {
 
+            Animal a = request.animal;
+
+
+            return Ok(a);
         }
 
     }
