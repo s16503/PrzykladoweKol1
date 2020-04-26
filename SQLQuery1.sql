@@ -9,4 +9,13 @@ JOIN Owner ON Owner.IdOwner = Animal.IdOwner
 ORDER BY name ASC;
 
 
-INSERT INTO Animal values('Kurczak','Ptak','2020-02-05',1);
+INSERT INTO Animal values('Alex','Kaczka','2020-02-05',1);
+
+
+SELECT * FROM Procedure_Animal
+
+INSERT INTO "Procedure" VALUES('Mycie','Mycie zwierzaka wodą z mydłem');
+
+SELECT * FROM "Procedure";
+
+DELETE FROM "Procedure" WHERE IdProcedure = 2

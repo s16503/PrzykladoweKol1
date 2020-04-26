@@ -27,7 +27,17 @@ namespace PrzyklKol1.Controllers
         {
 
             if (orderBy == null)
-                return BadRequest("brak orderBy");
+                return Ok(service.getAnimals("AdmissionDate DESC"));
+
+
+            string[] arr = orderBy.Split(" ");
+            if (arr.Length < 2)
+                return BadRequest("ORDERBY: [columnName] [asc/desc]");
+
+            if(!arr[1].ToUpper().Equals("ASC") && !arr[1].ToUpper().Equals("DESC"))
+                return BadRequest("ORDERBY: [columnName] [asc/desc]");
+
+          
 
             return Ok(service.getAnimals(orderBy));
         }
@@ -36,11 +46,22 @@ namespace PrzyklKol1.Controllers
         [HttpPost]
         public IActionResult AddAnimal(AddAnimalRequest request)
         {
+           
+ Animal animal = service.AddAnimal(request);
+                return Ok(animal);
 
-            Animal a = request.animal;
+            try
+            {
+               
 
 
-            return Ok(a);
+            }catch(Exception ex)
+            {
+                
+                return NotFound(ex.Message);
+            }
+
+           
         }
 
     }
